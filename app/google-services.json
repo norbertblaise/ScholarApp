@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "463813251314",
+    "project_id": "scholarapp-8ba27",
+    "storage_bucket": "scholarapp-8ba27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463813251314:android:c5f15ecbc8ab86359c806b",
+        "android_client_info": {
+          "package_name": "com.scholar.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463813251314-gn30r6ntc9tv7g14bi3r8tqppvpkoigi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKll-utFtwkwbRb4WCLHb6OFo2p_HIoQs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463813251314-gn30r6ntc9tv7g14bi3r8tqppvpkoigi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

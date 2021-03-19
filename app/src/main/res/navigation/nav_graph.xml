@@ -3,26 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/ScholarshipListFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.scholar.app.FirstFragment"
+        android:id="@+id/ScholarshipListFragment"
+        android:name="com.scholar.app.ScholarshipListFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_scholarship_list">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_ScholarshipListFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:popUpTo="@id/ScholarshipListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_ScholarshipListFragment_to_ScholarshipDetailFragment"
+            app:destination="@id/ScholarshipDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.scholar.app.SecondFragment"
+        android:id="@+id/ScholarshipDetailFragment"
+        android:name="com.scholar.app.ScholarshipDetailFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        tools:layout="@layout/fragment_scholarship_detail">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_ScholarshipDetailFragment_to_ScholarshipListFragment"
+            app:destination="@id/ScholarshipListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.scholar.app.onboarding.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_ScholarshipListFragment"
+            app:destination="@id/ScholarshipListFragment" />
     </fragment>
 </navigation>

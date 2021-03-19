@@ -9,4 +9,23 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- Strings for On Boarding Screen -->
+
+    <!--Titles-->
+    <string name="first_slide_title">Find Scholarships</string>
+    <string name="second_slide_title">Request for Scholarships</string>
+    <string name="third_slide_title">Apply easily</string>
+
+    <!--Descriptions-->
+    <string name="first_slide_desc">Find scholarships that match your financial needs and that you are a good fit for you. </string>
+    <string name="second_slide_desc">Upvote on scholarships that you want to be granted, the most requested ones have a higher chance of being granted.</string>
+    <string name="third_slide_desc">Save countless hours by applying with our easy apply.</string>
+
+    <!--Buttons-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="done_btn">Done</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
