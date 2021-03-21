@@ -19,7 +19,9 @@ public class ScholarshipListFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         //check if onboarding has been completed already
-        if (!onBoardingFinished()){
+        if (onBoardingFinished()){
+
+        } else{
             NavHostFragment.findNavController(ScholarshipListFragment.this)
                     .navigate(R.id.action_ScholarshipListFragment_to_viewPagerFragment);
         }
@@ -37,7 +39,7 @@ public class ScholarshipListFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ScholarshipListFragment.this)
-                        .navigate(R.id.action_ScholarshipDetailFragment_to_ScholarshipListFragment);
+                        .navigate(R.id.action_ScholarshipListFragment_to_ScholarshipDetailFragment);
             }
         });
     }

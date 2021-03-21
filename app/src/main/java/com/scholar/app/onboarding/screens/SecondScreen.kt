@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.scholar.app.R
 import com.scholar.app.databinding.FragmentSecondScreenBinding
 
@@ -23,7 +24,7 @@ class SecondScreen : Fragment() {
 
         val view = binding.root
 
-        val viewPager = activity?.findViewById<ViewPager>(R.id.viewPager)
+        val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.buttonNext2.setOnClickListener{
             viewPager?.currentItem = 2
