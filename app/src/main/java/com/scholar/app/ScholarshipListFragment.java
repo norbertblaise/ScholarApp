@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.scholar.app.util.FirebaseUtil;
+
 public class ScholarshipListFragment extends Fragment {
 
     @Override
@@ -49,4 +51,15 @@ public class ScholarshipListFragment extends Fragment {
         return sharedPref.getBoolean("Finished", false);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        FirebaseUtil.detachListener();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        FirebaseUtil.attachListener();
+    }
 }
