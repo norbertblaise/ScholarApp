@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.scholar.app">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ScholarApp">
+        <activity
+            android:name=".student.StudentProfileActivity"
+            android:label="@string/title_activity_student_profile"
+            android:theme="@style/Theme.ScholarApp.NoActionBar"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -19,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -33,9 +33,29 @@
         android:id="@+id/viewPagerFragment"
         android:name="com.scholar.app.onboarding.ViewPagerFragment"
         android:label="fragment_view_pager"
-        tools:layout="@layout/fragment_view_pager" >
+        tools:layout="@layout/fragment_view_pager">
         <action
             android:id="@+id/action_viewPagerFragment_to_ScholarshipListFragment"
             app:destination="@id/ScholarshipListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.scholar.app.student.ViewProfileFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_view_profile">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.scholar.app.student.EditProfileFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_edit_profile">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

@@ -54,12 +54,12 @@ public class ScholarshipListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        FirebaseUtil.detachListener();
+        //FirebaseUtil.attachListener();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        FirebaseUtil.attachListener();
+       //FirebaseUtil.detachListener();
     }
 }
