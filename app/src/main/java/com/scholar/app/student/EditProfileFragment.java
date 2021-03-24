@@ -13,28 +13,17 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.scholar.app.R;
 import com.scholar.app.databinding.FragmentEditProfileBinding;
 
+import static com.scholar.app.util.Constants.CITIES;
+import static com.scholar.app.util.Constants.COUNTRIES;
+import static com.scholar.app.util.Constants.COURSES;
+import static com.scholar.app.util.Constants.DEGREES;
+import static com.scholar.app.util.Constants.GENDER;
+
 public class EditProfileFragment extends Fragment {
     private FragmentEditProfileBinding binding;
 
-    public static final String[] COUNTRIES = new String[]{
-            //TODO add list of all countries
-    };
 
-    public static final String[] GENDER = new String[]{
-            "Male", "Female", "Non-binary", "Prefer not to say"
-    };
 
-    public static final String[] CITIES = new String[]{
-            //TODO add list of all cities
-    };
-
-    public static final String[] COURSES = new String[]{
-            //TODO add list of all courses
-    };
-
-    public static final String[] DEGREES = new String[]{
-            //TODO add list of all degrees
-    };
 
 
     @Override
