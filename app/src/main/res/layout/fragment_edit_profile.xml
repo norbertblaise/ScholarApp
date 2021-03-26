@@ -11,28 +11,15 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textview_fname"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginStart="58dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="88dp"
-                android:hint="First Name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.201"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/button_second"
@@ -42,21 +29,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textview_fname"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <TextView
-                android:id="@+id/textView_lname"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:width="266"
-                android:hint="Last Name"
-                android:textAppearance="@style/EditStudentProfileInputs"
-                app:layout_constraintStart_toStartOf="@+id/textview_fname"
-                app:layout_constraintTop_toBottomOf="@+id/textview_fname" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/editText_dob"
@@ -67,19 +40,8 @@
                 android:ems="10"
                 android:hint="Date Of Birth"
                 android:inputType="date"
-                app:layout_constraintStart_toStartOf="@+id/textView_lname"
-                app:layout_constraintTop_toBottomOf="@+id/textView_lname" />
-
-            <TextView
-                android:id="@+id/textView_university"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="College/University"
-                android:textAppearance="@style/EditStudentProfileInputs"
-                app:layout_constraintStart_toStartOf="@+id/actv_city"
-                app:layout_constraintTop_toBottomOf="@+id/actv_city" />
+                app:layout_constraintStart_toStartOf="@+id/editText_lName"
+                app:layout_constraintTop_toBottomOf="@+id/editText_lName" />
 
             <EditText
                 android:id="@+id/editTextDate_ExpectedGrad"
@@ -134,8 +96,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="University Location"
-                app:layout_constraintStart_toStartOf="@+id/textView_university"
-                app:layout_constraintTop_toBottomOf="@+id/textView_university" />
+                app:layout_constraintStart_toStartOf="@+id/editText_univeristy"
+                app:layout_constraintTop_toBottomOf="@+id/editText_univeristy" />
 
             <AutoCompleteTextView
                 android:id="@+id/actv_uni_city"
@@ -175,6 +137,44 @@
                 android:hint="Gender"
                 app:layout_constraintStart_toStartOf="@+id/editText_dob"
                 app:layout_constraintTop_toBottomOf="@+id/editText_dob" />
+
+            <EditText
+                android:id="@+id/editText_fName"
+                style="@style/EditStudentProfileInputs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:ems="10"
+                android:hint="First Name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editText_lName"
+                style="@style/EditStudentProfileInputs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Last Name"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/editText_fName"
+                app:layout_constraintTop_toBottomOf="@+id/editText_fName" />
+
+            <EditText
+                android:id="@+id/editText_univeristy"
+                style="@style/EditStudentProfileInputs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="College/University"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/actv_city"
+                app:layout_constraintTop_toBottomOf="@+id/actv_city" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
