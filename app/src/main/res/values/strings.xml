@@ -29,6 +29,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_student_profile">StudentProfileActivity</string>
+    <string name="student_profile_fragment_label">Student Profile Fragment</string>
+    <string name="edit_label_fragment_label">Edit Profile Fragment</string>
+    <string name="scholarship_detail_fragment_label">Scholarship Detail Fragment</string>
+    <string name="scholarship_list_fragment_label">Scholarship List Fragment</string>
 
 
 </resources>

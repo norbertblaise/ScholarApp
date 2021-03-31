@@ -16,7 +16,7 @@
             android:label="@string/title_activity_student_profile"
             android:theme="@style/Theme.ScholarApp.NoActionBar"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".scholarship.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ScholarApp.NoActionBar">
             <intent-filter>

@@ -1,10 +1,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.scholar.app.MainActivity">
+    tools:context="com.scholar.app.scholarship.MainActivity">
+    <item
+        android:id="@+id/action_view_profile"
+        android:orderInCategory="100"
+        android:title="View profile" />
+    <item
+        android:id="@+id/dark_mode_switch"
+        android:orderInCategory="101"
+        android:title="Switch"
+        app:actionLayout="@layout/switch_item" />
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="102"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
 </menu>

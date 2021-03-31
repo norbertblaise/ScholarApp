@@ -6,40 +6,60 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.auth.api.Auth;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.scholar.app.scholarship.Scholarship;
+import com.scholar.app.student.Student;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class FirebaseUtil {
     private static FirebaseUtil firebaseUtil;
     public static FirebaseAuth mFirebaseAuth;
+    public static FirebaseFirestore firestoreDb;
+    public static CollectionReference mStudentsReference;
+    public static ArrayList<Scholarship> mScholarships;
+
+
     public static FirebaseAuth.AuthStateListener mAuthListener;
     public static final int RC_SIGN_IN = 123;
     private static Activity caller;
 
-    private FirebaseUtil(){}
+    private FirebaseUtil() {
+    }
 
-    public static void openFBReference(String ref, Activity callerActivity){
-        if( firebaseUtil == null){
+    public static void openFBReference(String ref, Activity callerActivity) {
+        if (firebaseUtil == null) {
             firebaseUtil = new FirebaseUtil();
-            //TODO add database instance
+            firestoreDb = FirebaseFirestore.getInstance();
             mFirebaseAuth = FirebaseAuth.getInstance();
+            mScholarships = new ArrayList<Scholarship>();
+
             caller = callerActivity;
             mAuthListener = new FirebaseAuth.AuthStateListener() {
                 @Override
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                    FirebaseUtil.signIn();
+                    if (firebaseAuth.getCurrentUser() == null) {
+                        FirebaseUtil.signIn();
+                    }
                     Toast.makeText(callerActivity.getBaseContext(), "Welcome back!", Toast.LENGTH_LONG).show();
+
 
                 }
             };
 
+
+
         }
+        mStudentsReference = firestoreDb.collection(ref);
+//    mCollectionReference = mFirebaseFirestore.collection("customers");
     }
 
-    public static void signIn(){
+
+    public static void signIn() {
         //Choose authentication providers
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.EmailBuilder().build(),
@@ -55,7 +75,8 @@ public class FirebaseUtil {
                         .build(),
                 RC_SIGN_IN);
     }
-    public static void attachListener(){
+
+    public static void attachListener() {
         mFirebaseAuth.addAuthStateListener(mAuthListener);
     }
 

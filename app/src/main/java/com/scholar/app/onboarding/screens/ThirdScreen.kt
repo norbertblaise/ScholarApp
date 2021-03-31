@@ -6,15 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavHostController
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
-import androidx.viewpager.widget.ViewPager
-import com.scholar.app.MainActivity
 import com.scholar.app.R
-import com.scholar.app.ScholarshipDetailFragment
 import com.scholar.app.databinding.FragmentThirdScreenBinding
-import com.scholar.app.onboarding.ViewPagerFragment
 
 
 class ThirdScreen : Fragment() {

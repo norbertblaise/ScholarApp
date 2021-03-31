@@ -1,46 +1,68 @@
 package com.scholar.app.student;
 
 public class Student {
-    private String sid;
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    private String userId;
+    private String studentProfileId;
     private String name;
     private String dob;
+    private String gender;
+    private String bio;
     private String nationality;
     private String countryOfResidence;
     private String city;
     private String university;
-    private String uniLocation;
+    private String uniCountry;
     private String courseOfStudy;
     private String degree;
     private String startDate;
     private String expectedGradDate;
 
-    public Student(){
+    public Student() {
         //required empty public constructor
     }
 
-    public Student(String sid, String name, String dob, String nationality, String countryOfResidence,
-                   String city, String university, String uniLocation, String courseOfStudy,
-                   String degree, String startDate, String expectedGradDate) {
-        this.sid = sid;
+
+    public Student(String name, String dob, String gender, String bio,
+                   String nationality, String countryOfResidence, String city, String university,
+                   String uniCountry, String courseOfStudy, String degree, String startDate,
+                   String expectedGradDate) {
         this.name = name;
         this.dob = dob;
+        this.gender = gender;
+        this.bio = bio;
         this.nationality = nationality;
         this.countryOfResidence = countryOfResidence;
         this.city = city;
         this.university = university;
-        this.uniLocation = uniLocation;
+        this.uniCountry = uniCountry;
         this.courseOfStudy = courseOfStudy;
         this.degree = degree;
         this.startDate = startDate;
         this.expectedGradDate = expectedGradDate;
     }
 
-    public String getSid() {
-        return sid;
+    public String getStudentProfileId() {
+        return studentProfileId;
     }
 
-    public void setSid(String sid) {
-        this.sid = sid;
+    public void setStudentProfileId(String studentProfileId) {
+        this.studentProfileId = studentProfileId;
     }
 
     public String getName() {
@@ -58,6 +80,15 @@ public class Student {
     public void setDob(String dob) {
         this.dob = dob;
     }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
 
     public String getNationality() {
         return nationality;
@@ -91,12 +122,12 @@ public class Student {
         this.university = university;
     }
 
-    public String getUniLocation() {
-        return uniLocation;
+    public String getUniCountry() {
+        return uniCountry;
     }
 
-    public void setUniLocation(String uniLocation) {
-        this.uniLocation = uniLocation;
+    public void setUniCountry(String uniCountry) {
+        this.uniCountry = uniCountry;
     }
 
     public String getCourseOfStudy() {

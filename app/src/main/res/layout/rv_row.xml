@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/scholarship_title_rvItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textAppearance="@style/OnboardingDesc"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Software engineering Scholarship" />
+
+            <TextView
+                android:id="@+id/scholarship_desc_rvItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/OnboardingDesc"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/scholarship_amount_rvItem"
+                tools:text="5000" />
+
+            <TextView
+                android:id="@+id/scholarship_amount_rvItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/OnboardingDesc"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/scholarship_title_rvItem"
+                app:layout_constraintTop_toBottomOf="@+id/scholarship_title_rvItem"
+                tools:text="Software engineering  scholarship for Sub Saharan Africa" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:textAppearance="@style/OnboardingDesc"
+                app:layout_constraintBaseline_toBaselineOf="@+id/scholarship_desc_rvItem"
+                app:layout_constraintStart_toStartOf="@+id/scholarship_amount_rvItem" />
+
+            <TextView
+                android:id="@+id/scholarship_demand_rvItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textAppearance="@style/OnboardingDesc"
+                app:layout_constraintBottom_toBottomOf="@+id/scholarship_plusOne_button"
+                app:layout_constraintEnd_toStartOf="@+id/scholarship_plusOne_button"
+                app:layout_constraintTop_toTopOf="@+id/scholarship_plusOne_button"
+                tools:text="230" />
+
+            <ImageButton
+                android:id="@+id/scholarship_plusOne_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:paddingStart="5dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scholarship_amount_rvItem"
+                app:srcCompat="@drawable/ic_plus_one_orange" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

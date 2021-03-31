@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/ScholarshipListFragment"
-        android:name="com.scholar.app.ScholarshipListFragment"
-        android:label="@string/first_fragment_label"
+        android:name="com.scholar.app.scholarship.ScholarshipListFragment"
+        android:label="@string/scholarship_list_fragment_label"
         tools:layout="@layout/fragment_scholarship_list">
 
         <action
@@ -19,15 +19,21 @@
         <action
             android:id="@+id/action_ScholarshipListFragment_to_ScholarshipDetailFragment"
             app:destination="@id/ScholarshipDetailFragment" />
+        <action
+            android:id="@+id/action_ScholarshipListFragment_to_FirstFragment"
+            app:destination="@id/StudentProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/ScholarshipDetailFragment"
-        android:name="com.scholar.app.ScholarshipDetailFragment"
-        android:label="@string/second_fragment_label"
+        android:name="com.scholar.app.scholarship.ScholarshipDetailFragment"
+        android:label="@string/scholarship_detail_fragment_label"
         tools:layout="@layout/fragment_scholarship_detail">
         <action
             android:id="@+id/action_ScholarshipDetailFragment_to_ScholarshipListFragment"
             app:destination="@id/ScholarshipListFragment" />
+        <argument
+            android:name="Scholarship"
+            app:argType="com.scholar.app.scholarship.Scholarship" />
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
@@ -39,23 +45,23 @@
             app:destination="@id/ScholarshipListFragment" />
     </fragment>
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/StudentProfileFragment"
         android:name="com.scholar.app.student.ViewProfileFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/student_profile_fragment_label"
         tools:layout="@layout/fragment_view_profile">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/EditProfileFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/EditProfileFragment"
         android:name="com.scholar.app.student.EditProfileFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/edit_label_fragment_label"
         tools:layout="@layout/fragment_edit_profile">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/StudentProfileFragment" />
     </fragment>
 </navigation>

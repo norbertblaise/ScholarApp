@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "463813251314-gl9s0f6tj197a28q44kg9l8ais7ij7nm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scholar.app",
+            "certificate_hash": "808ddabd4ca610a915c1572e2491f1403297f1ba"
+          }
+        },
+        {
           "client_id": "463813251314-gn30r6ntc9tv7g14bi3r8tqppvpkoigi.apps.googleusercontent.com",
           "client_type": 3
         }

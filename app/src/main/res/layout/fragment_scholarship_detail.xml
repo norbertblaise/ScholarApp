@@ -4,24 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScholarshipDetailFragment">
-
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".scholarship.ScholarshipDetailFragment">
 
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/me_too_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/previous"
+        android:layout_marginBottom="32dp"
+        android:text="I need this"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/scholarship_det_title_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:textAppearance="@style/OnboardingTitle"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.288"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/scholarship_desc_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+        android:paddingEnd="50dp"
+        android:textAppearance="@style/OnboardingDesc"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/scholarship_det_title_textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/scholarship_det_title_textView"
+        app:layout_constraintTop_toBottomOf="@+id/scholarship_det_title_textView"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in uienply voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat norin proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+
+    <TextView
+        android:id="@+id/scholarship_det_amount_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:textAppearance="@style/EditStudentProfileInputs"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="@+id/scholarship_desc_textView2"
+        app:layout_constraintTop_toBottomOf="@+id/scholarship_desc_textView2"
+        tools:text="5000" />
+
+    <TextView
+        android:id="@+id/dollar_sign_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="USD."
+        android:textAppearance="@style/OnboardingTitle"
+        android:textSize="40sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/scholarship_det_amount_textView"
+        app:layout_constraintEnd_toStartOf="@+id/scholarship_det_amount_textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

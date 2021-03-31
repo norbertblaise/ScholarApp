@@ -8,10 +8,10 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/student_name_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="284dp"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
         tools:text="John Doe" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/student_bio_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -29,21 +29,21 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="14dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/student_name_textView"
+        app:layout_constraintStart_toStartOf="@+id/student_name_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_location_textView"
         tools:text="Hi! My name is John, I’m a creative geek from San Francisco, CA. Contact me at john@mail.com" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/student_location_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:textColor="@color/black"
         android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/student_name_textView"
+        app:layout_constraintStart_toStartOf="@+id/student_name_textView"
+        app:layout_constraintTop_toBottomOf="@+id/student_name_textView"
         tools:text="San Francisco, CA" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -55,7 +55,7 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/student_bio_textView"
         app:layout_constraintVertical_bias="0.888"
         app:srcCompat="@drawable/ic_pen_black" />
 

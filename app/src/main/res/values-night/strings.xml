@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="edit_label_fragment_label">Edit Profile Fragment</string>
+    <string name="scholarship_detail_fragment_label">Scholarship Detail Fragment</string>
+    <string name="scholarship_list_fragment_label">Scholarship List Fragment</string>
+</resources>
