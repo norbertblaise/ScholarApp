@@ -14,6 +14,7 @@
         <activity
             android:name=".student.StudentProfileActivity"
             android:label="@string/title_activity_student_profile"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.ScholarApp.NoActionBar"></activity>
         <activity
             android:name=".scholarship.MainActivity"

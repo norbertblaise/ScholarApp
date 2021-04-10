@@ -17,11 +17,23 @@
             app:popUpTo="@id/ScholarshipListFragment"
             app:popUpToInclusive="true" />
         <action
+            android:id="@+id/action_ScholarshipListFragment_to_FirstFragment"
+            app:destination="@id/StudentProfileFragment" />
+        <action
             android:id="@+id/action_ScholarshipListFragment_to_ScholarshipDetailFragment"
             app:destination="@id/ScholarshipDetailFragment" />
         <action
-            android:id="@+id/action_ScholarshipListFragment_to_FirstFragment"
+            android:id="@+id/action_ScholarshipListFragment_to_requestScholarshipFragment"
+            app:destination="@id/requestScholarshipFragment" />
+        <action
+            android:id="@+id/action_ScholarshipListFragment_to_StudentProfileFragment"
             app:destination="@id/StudentProfileFragment" />
+        <action
+            android:id="@+id/action_ScholarshipListFragment_to_verificationWaitingFragment"
+            app:destination="@id/verificationWaitingFragment" />
+        <action
+            android:id="@+id/action_ScholarshipListFragment_to_addProfileDialog"
+            app:destination="@id/addProfileDialog" />
     </fragment>
     <fragment
         android:id="@+id/ScholarshipDetailFragment"
@@ -32,7 +44,7 @@
             android:id="@+id/action_ScholarshipDetailFragment_to_ScholarshipListFragment"
             app:destination="@id/ScholarshipListFragment" />
         <argument
-            android:name="Scholarship"
+            android:name="SelectedScholarship"
             app:argType="com.scholar.app.scholarship.Scholarship" />
     </fragment>
     <fragment
@@ -49,9 +61,8 @@
         android:name="com.scholar.app.student.ViewProfileFragment"
         android:label="@string/student_profile_fragment_label"
         tools:layout="@layout/fragment_view_profile">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_StudentProfileFragment_to_EditProfileFragment"
             app:destination="@id/EditProfileFragment" />
     </fragment>
     <fragment
@@ -63,5 +74,35 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/StudentProfileFragment" />
+        <argument
+            android:name="Student"
+            app:argType="com.scholar.app.student.Student"
+            app:nullable="true" />
     </fragment>
+    <fragment
+        android:id="@+id/requestScholarshipFragment"
+        android:name="com.scholar.app.scholarship.RequestScholarshipFragment"
+        android:label="fragment_request_scholarship"
+        tools:layout="@layout/fragment_request_scholarship" >
+        <action
+            android:id="@+id/action_requestScholarshipFragment_to_ScholarshipListFragment"
+            app:destination="@id/ScholarshipListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationWaitingFragment"
+        android:name="com.scholar.app.onboarding.VerificationWaitingFragment"
+        android:label="fragment_verification_waiting"
+        tools:layout="@layout/fragment_verification_waiting" >
+        <action
+            android:id="@+id/action_verificationWaitingFragment_to_ScholarshipListFragment"
+            app:destination="@id/ScholarshipListFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addProfileDialog"
+        android:name="com.scholar.app.student.AddProfileDialog"
+        android:label="AddProfileDialog" >
+        <action
+            android:id="@+id/action_addProfileDialog_to_EditProfileFragment"
+            app:destination="@id/EditProfileFragment" />
+    </dialog>
 </navigation>

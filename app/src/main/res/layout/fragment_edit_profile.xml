@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,178 +21,361 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/me_too_button"
-                android:layout_width="wrap_content"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/basicInfoCardView"
+                style="@style/EditProfileCardView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/previous"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <EditText
-                android:id="@+id/editText_dob"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Date Of Birth"
-                android:inputType="date"
-                app:layout_constraintStart_toStartOf="@+id/editText_lName"
-                app:layout_constraintTop_toBottomOf="@+id/editText_lName" />
-
-            <EditText
-                android:id="@+id/editTextDate_ExpectedGrad"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Expected Graduation"
-                android:inputType="date"
-                app:layout_constraintStart_toStartOf="@+id/editText_startDate"
-                app:layout_constraintTop_toBottomOf="@+id/editText_startDate" />
-
-            <EditText
-                android:id="@+id/editText_startDate"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Start Date"
-                android:inputType="date"
-                app:layout_constraintStart_toStartOf="@+id/actv_degree_type"
-                app:layout_constraintTop_toBottomOf="@+id/actv_degree_type" />
-
-            <AutoCompleteTextView
-                android:id="@+id/actv_nationality"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:completionHint="Nationality"
-                android:completionThreshold="3"
-                android:hint="Nationality"
-                app:layout_constraintStart_toStartOf="@+id/bio_editText"
-                app:layout_constraintTop_toBottomOf="@+id/bio_editText" />
-
-            <AutoCompleteTextView
-                android:id="@+id/actv_city"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="City"
-                app:layout_constraintStart_toStartOf="@+id/actv_country_of_residence"
-                app:layout_constraintTop_toBottomOf="@+id/actv_country_of_residence" />
-
-            <AutoCompleteTextView
-                android:id="@+id/actv_uni_location"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="University Location"
-                app:layout_constraintStart_toStartOf="@+id/editText_univeristy"
-                app:layout_constraintTop_toBottomOf="@+id/editText_univeristy" />
-
-            <AutoCompleteTextView
-                android:id="@+id/actv_course"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="Course of Study"
-                app:layout_constraintStart_toStartOf="@+id/actv_uni_location"
-                app:layout_constraintTop_toBottomOf="@+id/actv_uni_location" />
-
-            <AutoCompleteTextView
-                android:id="@+id/actv_degree_type"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="Degree Type"
-                app:layout_constraintStart_toStartOf="@+id/actv_course"
-                app:layout_constraintTop_toBottomOf="@+id/actv_course" />
-
-            <AutoCompleteTextView
-                android:id="@+id/actv_gender"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="Gender"
-                app:layout_constraintStart_toStartOf="@+id/editText_dob"
-                app:layout_constraintTop_toBottomOf="@+id/editText_dob" />
-
-            <EditText
-                android:id="@+id/editText_fName"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
-                android:ems="10"
-                android:hint="First Name"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
-                android:id="@+id/editText_lName"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/EditProfileCardViewConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/editText_fullName_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:hint="Full Name"
+                        app:layout_constraintStart_toStartOf="@+id/basicInfo_textView"
+                        app:layout_constraintTop_toBottomOf="@+id/basicInfo_textView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText_fullName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/editText_dob_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:hint="Date Of Birth"
+                        app:layout_constraintStart_toStartOf="@+id/editText_fullName_layout"
+                        app:layout_constraintTop_toBottomOf="@id/editText_fullName_layout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="date"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/actv_gender_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:hint="Gender"
+                        app:layout_constraintStart_toStartOf="@+id/editText_dob_layout"
+                        app:layout_constraintTop_toBottomOf="@+id/editText_dob_layout">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/actv_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:completionThreshold="1"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/basicInfo_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Basic Info"
+                        android:textAppearance="@style/OnboardingTitle"
+                        android:textSize="28sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bioCardView"
+                style="@style/EditProfileCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/basicInfoCardView"
+                app:layout_constraintTop_toBottomOf="@+id/basicInfoCardView">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/EditProfileCardViewConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/bio_editText_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Bio"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/bio_textView"
+                        app:layout_constraintTop_toBottomOf="@+id/bio_textView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/bio_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:ems="10"
+                            android:gravity="start|top"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/bio_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bio"
+                        android:textAppearance="@style/ProfileSectionTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/locationCardview"
+                style="@style/EditProfileCardView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Last Name"
-                android:inputType="textPersonName"
-                app:layout_constraintStart_toStartOf="@+id/editText_fName"
-                app:layout_constraintTop_toBottomOf="@+id/editText_fName" />
+                app:layout_constraintTop_toBottomOf="@+id/bioCardView">
 
-            <EditText
-                android:id="@+id/editText_univeristy"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/EditProfileCardViewConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/actv_country_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Country"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/locale_label"
+                        app:layout_constraintTop_toBottomOf="@+id/locale_label">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/actv_country"
+                            style="@style/EditStudentProfileInputs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:completionHint="Nationality"
+                            android:completionThreshold="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintEnd_toEndOf="@+id/actv_country_layout"
+                        app:layout_constraintStart_toStartOf="@+id/actv_country_layout"
+                        app:layout_constraintTop_toBottomOf="@+id/actv_country_layout">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/actv_city"
+                            style="@style/EditStudentProfileInputs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:completionThreshold="1"
+                            android:hint="City" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/locale_label"
+                        style="@style/ProfileSectionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Locale"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/educationCardView"
+                style="@style/EditProfileCardView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="College/University"
-                android:inputType="textPersonName"
-                app:layout_constraintStart_toStartOf="@+id/actv_city"
-                app:layout_constraintTop_toBottomOf="@+id/actv_city" />
+                android:layout_marginBottom="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/locationCardview"
+                tools:layout_editor_absoluteX="16dp">
 
-            <AutoCompleteTextView
-                android:id="@+id/actv_country_of_residence"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:completionHint="Same as Nationality"
-                android:hint="Country of Residence"
-                app:layout_constraintStart_toStartOf="@+id/actv_nationality"
-                app:layout_constraintTop_toBottomOf="@+id/actv_nationality" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/EditProfileCardViewConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/bio_editText"
-                style="@style/EditStudentProfileInputs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="bio"
-                android:inputType="textMultiLine"
-                app:layout_constraintStart_toStartOf="@+id/actv_gender"
-                app:layout_constraintTop_toBottomOf="@+id/actv_gender" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/editText_univeristy_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/education_textView"
+                        app:layout_constraintTop_toBottomOf="@+id/education_textView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText_univeristy"
+                            style="@style/EditStudentProfileInputs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="College/University"
+                            android:inputType="textPersonName"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/actv_degree_type_layout"
+                        android:layout_marginTop="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="@+id/actv_course_layout"
+                        app:layout_constraintTop_toBottomOf="@+id/actv_course_layout">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/actv_degree_type"
+                            style="@style/EditStudentProfileInputs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:completionThreshold="1"
+                            android:hint="Degree Type" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/actv_course_layout"
+                        android:layout_marginTop="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="@+id/actv_uni_location_layout"
+                        app:layout_constraintTop_toBottomOf="@+id/actv_uni_location_layout">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/actv_course"
+                            style="@style/EditStudentProfileInputs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:completionThreshold="1"
+                            android:hint="Course of Study" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_marginTop="16dp"
+                        android:id="@+id/editText_startDate_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="@+id/actv_degree_type_layout"
+                        app:layout_constraintTop_toBottomOf="@+id/actv_degree_type_layout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText_startDate"
+                            style="@style/EditStudentProfileInputs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:ems="10"
+                            android:hint="Start Date"
+                            android:inputType="date"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_marginTop="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="@+id/editText_startDate_layout"
+                        app:layout_constraintTop_toBottomOf="@+id/editText_startDate_layout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextDate_ExpectedGrad"
+                            style="@style/EditStudentProfileInputs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:ems="10"
+                            android:hint="Expected Graduation"
+                            android:inputType="date"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/actv_uni_location_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintStart_toStartOf="@+id/editText_univeristy_layout"
+                        app:layout_constraintTop_toBottomOf="@+id/editText_univeristy_layout">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/actv_uni_location"
+                            style="@style/EditStudentProfileInputs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:completionThreshold="1"
+                            android:hint="University Location" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/education_textView"
+                        style="@style/ProfileSectionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Education"
+                        android:textAlignment="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

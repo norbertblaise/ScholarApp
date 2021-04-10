@@ -9,8 +9,13 @@
     <item
         android:id="@+id/dark_mode_switch"
         android:orderInCategory="101"
-        android:title="Switch"
+        android:title="Dark Mode"
         app:actionLayout="@layout/switch_item" />
+    <item
+        android:id="@+id/logout_action"
+        android:title="Logout"
+        app:showAsAction="never"
+        />
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="102"

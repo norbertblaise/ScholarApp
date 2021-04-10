@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -17,9 +18,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    viewBinding {
-        enabled true
+    buildFeatures {
+        viewBinding true
     }
+//    viewBinding {
+//        enabled true
+//    }
 
     buildTypes {
         release {
@@ -35,26 +39,44 @@ android {
 
 dependencies {
 
+    def nav_version = "2.3.4"
+
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.appcompat:design:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.navigation:navigation-fragment:2.3.4'
-    implementation 'androidx.navigation:navigation-ui:2.3.4'
+
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    // Jetpack Compose Integration
+    implementation "androidx.navigation:navigation-compose:1.0.0-alpha09"
+
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //ktx fragments
-    implementation "androidx.fragment:fragment-ktx:1.3.1"
+    implementation "androidx.fragment:fragment-ktx:1.3.2"
 
     //ktx navigation
     implementation "androidx.navigation:navigation-runtime-ktx:2.3.4"
-    
+    //Java navigation
+    implementation "androidx.navigation:navigation-runtime:2.3.4"
+
+
 
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:26.7.0')
@@ -68,6 +90,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     //FirebaseUI
     implementation 'com.firebaseui:firebase-ui-auth:6.4.0'
+    implementation  'com.firebaseui:firebase-ui-firestore:6.4.0'
 //firestore dependency
     implementation 'com.google.firebase:firebase-firestore'
 
@@ -77,4 +100,9 @@ dependencies {
     //cloud messaging and analytics dependency
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-analytics'
+
+    //EditText mask
+
+
+
 }

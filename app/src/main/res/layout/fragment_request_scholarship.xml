@@ -6,46 +6,96 @@
     android:layout_height="match_parent"
     tools:context=".scholarship.RequestScholarshipFragment">
 
-    <EditText
-        android:id="@+id/scholarship_req_description"
-        style="@style/EditStudentProfileInputs"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/scholarship_req_title_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Description"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/scholarship_req_title"
-        app:layout_constraintStart_toStartOf="@+id/scholarship_req_title"
-        app:layout_constraintTop_toBottomOf="@+id/scholarship_req_title" />
-
-    <EditText
-        android:id="@+id/scholarship_req_title"
-        style="@style/EditStudentProfileInputs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Title"
-        android:inputType="textPersonName"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/scholarship_req_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Title"
+            android:inputType="textPersonName"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/scholarship_req_amount"
-        style="@style/EditStudentProfileInputs"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/scholarship_req_description_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Amount in USD"
-        android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="@+id/scholarship_req_description"
-        app:layout_constraintStart_toStartOf="@+id/scholarship_req_description"
-        app:layout_constraintTop_toBottomOf="@+id/scholarship_req_description" />
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/scholarship_req_title_layout"
+        app:layout_constraintStart_toStartOf="@+id/scholarship_req_title_layout"
+        app:layout_constraintTop_toBottomOf="@+id/scholarship_req_title_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/scholarship_req_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/scholarship_req_amount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/scholarship_req_description_layout"
+        app:layout_constraintStart_toStartOf="@+id/scholarship_req_description_layout"
+        app:layout_constraintTop_toBottomOf="@+id/scholarship_req_description_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/scholarship_req_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Amount in USD"
+            android:inputType="numberSigned" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/actv_scholarship_degree_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/scholarship_req_amount_layout"
+        app:layout_constraintStart_toStartOf="@+id/scholarship_req_amount_layout"
+        app:layout_constraintTop_toBottomOf="@+id/scholarship_req_amount_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/actv_scholarship_degree"
+            style="@style/EditStudentProfileInputs"
+            android:layout_height="wrap_content"
+            android:hint="Degree"
+            android:completionThreshold="1"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/scholarship_req_button"
@@ -54,7 +104,23 @@
         android:layout_marginBottom="32dp"
         android:text="Request"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/scholarship_req_amount"
-        app:layout_constraintStart_toStartOf="@+id/scholarship_req_amount" />
+        app:layout_constraintEnd_toEndOf="@+id/scholarship_req_amount_layout"
+        app:layout_constraintStart_toStartOf="@+id/scholarship_req_amount_layout"
+        app:layout_constraintTop_toBottomOf="@+id/actv_scholarship_degree_layout" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/roboto_light"
+        android:text="Request a new Scholarship"
+        android:textAppearance="@style/OnboardingTitle"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/scholarship_req_title_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.878" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

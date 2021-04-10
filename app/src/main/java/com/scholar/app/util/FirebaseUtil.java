@@ -7,35 +7,48 @@ import androidx.annotation.NonNull;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.scholar.app.scholarship.Scholarship;
-import com.scholar.app.student.Student;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.scholar.app.util.Constants.SCHOLARSHIPS;
+
 public class FirebaseUtil {
     private static FirebaseUtil firebaseUtil;
     public static FirebaseAuth mFirebaseAuth;
     public static FirebaseFirestore firestoreDb;
-    public static CollectionReference mStudentsReference;
+    public static CollectionReference collectionReference;
+    public static DocumentReference mStudentsDocumentRef;
+    public static DocumentReference mScholarshipsDocumentRef;
+    public static DocumentReference mPetittionsDocumentRef;
     public static ArrayList<Scholarship> mScholarships;
+    public static FirebaseUser currentUser;
+
 
 
     public static FirebaseAuth.AuthStateListener mAuthListener;
+    public static FirebaseAuth.AuthStateListener mEmailVerified;
     public static final int RC_SIGN_IN = 123;
     private static Activity caller;
 
     private FirebaseUtil() {
     }
 
+
     public static void openFBReference(String ref, Activity callerActivity) {
         if (firebaseUtil == null) {
             firebaseUtil = new FirebaseUtil();
             firestoreDb = FirebaseFirestore.getInstance();
             mFirebaseAuth = FirebaseAuth.getInstance();
+            if (mFirebaseAuth.getCurrentUser() != null){
+                currentUser = mFirebaseAuth.getCurrentUser();
+            }
             mScholarships = new ArrayList<Scholarship>();
 
             caller = callerActivity;
@@ -53,8 +66,10 @@ public class FirebaseUtil {
 
 
 
+
         }
-        mStudentsReference = firestoreDb.collection(ref);
+        mScholarshipsDocumentRef = firestoreDb.collection(SCHOLARSHIPS).document();
+        collectionReference = firestoreDb.collection(ref);
 //    mCollectionReference = mFirebaseFirestore.collection("customers");
     }
 
@@ -83,4 +98,6 @@ public class FirebaseUtil {
     public static void detachListener() {
         mFirebaseAuth.removeAuthStateListener(mAuthListener);
     }
+
+
 }

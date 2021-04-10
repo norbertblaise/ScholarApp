@@ -1,5 +1,8 @@
 package com.scholar.app.scholarship;
 
+import com.google.firebase.firestore.IgnoreExtraProperties;
+
+@IgnoreExtraProperties
 public class Petition {
     private String petitionId;
     private String scholarshipId;

@@ -5,9 +5,27 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="green">#009F00</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue_dark">#274a99</color>
-    <color name="light_blue">#2d84c6</color>
+    <color name="blue_200">#82A7FA</color>
+    <color name="blue_500">#274a99</color>
+    <color name="blue_700">#203C7A</color>
+    <color name="sky_200">#5FB9FD</color>
+    <color name="sky_500">#2d84c6</color>
+    <color name="sky_700">#1B4F77</color>
     <color name="orange">#dc9524</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="dark_grey">#121212</color>
+    <color name="lighter_grey">#2B2B2B</color>
+
+    <color name="system_ui_scrim_light">#E3ffffff</color>
+    <color name="system_ui_scrim_dark">#C3000000</color>
+
+    <color name="status_bar_scrim">@color/system_ui_scrim_dark</color>
+    <color name="nav_bar_scrim">@color/status_bar_scrim</color>
 </resources>

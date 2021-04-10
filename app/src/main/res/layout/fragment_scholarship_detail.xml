@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".scholarship.ScholarshipDetailFragment">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/me_too_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="I need this"
+        style="?materialButtonOutlinedStyle"
+        app:strokeColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -20,7 +22,9 @@
         android:id="@+id/scholarship_det_title_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="70dp"
+        android:layout_marginEnd="32dp"
         android:textAppearance="@style/OnboardingTitle"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +36,7 @@
         tools:text="Title" />
 
     <TextView
-        android:id="@+id/scholarship_desc_textView2"
+        android:id="@+id/scholarship_desc_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -54,8 +58,8 @@
         android:layout_marginEnd="50dp"
         android:textAppearance="@style/EditStudentProfileInputs"
         android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="@+id/scholarship_desc_textView2"
-        app:layout_constraintTop_toBottomOf="@+id/scholarship_desc_textView2"
+        app:layout_constraintEnd_toEndOf="@+id/scholarship_desc_textView"
+        app:layout_constraintTop_toBottomOf="@+id/scholarship_desc_textView"
         tools:text="5000" />
 
     <TextView

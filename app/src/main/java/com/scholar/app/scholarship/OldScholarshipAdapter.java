@@ -5,36 +5,42 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.navigation.NavAction;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.NavController;
+
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.scholar.app.R;
-import com.scholar.app.databinding.FragmentScholarshipListBinding;
-import com.scholar.app.databinding.RvRowBinding;
 import com.scholar.app.util.FirebaseUtil;
 
 import java.util.ArrayList;
 
+import static androidx.navigation.Navigation.findNavController;
 import static com.scholar.app.util.Constants.PETITIONS;
 import static com.scholar.app.util.Constants.SCHOLARSHIPS;
+import static com.scholar.app.util.FirebaseUtil.currentUser;
+import static com.scholar.app.util.FirebaseUtil.firestoreDb;
 
-public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.ScholarshipViewHolder> {
+
+public class OldScholarshipAdapter extends RecyclerView.Adapter<OldScholarshipAdapter.ScholarshipViewHolder> {
     public static final String TAG = "ScholarshipAdapter";
 
     ArrayList<Scholarship> scholarships;
     ArrayList<Petition> petitions;
+    NavController navController;
 
-    public ScholarshipAdapter() {
+
+    public OldScholarshipAdapter() {
 
         scholarships = FirebaseUtil.mScholarships;
         FirebaseUtil.firestoreDb.collection(SCHOLARSHIPS)
@@ -55,7 +61,8 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.
                                     //TODO fill in  scholarship fields from document fields and set the text of their views
 
                                     scholarships.add(scholarship);
-                                    notifyItemInserted(scholarships.size() - 1);
+//                                    notifyItemInserted(scholarships.size() - 1);
+                                    notifyDataSetChanged();
                                     break;
                                 case MODIFIED:
                                     Log.d("TAG", "Modified Msg: " + dc.getDocument().toObject(Scholarship.class));
@@ -68,8 +75,6 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.
 
                     }
                 });
-
-
     }
 
     @NonNull
@@ -106,6 +111,7 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.
         TextView schDescription;
         TextView schAmount;
         TextView schDemand;
+        ImageButton plusOneButton;
 
         public ScholarshipViewHolder(View itemView) {
             super(itemView);
@@ -113,9 +119,33 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.
             schDescription = itemView.findViewById(R.id.scholarship_desc_rvItem);
             schAmount = itemView.findViewById(R.id.scholarship_amount_rvItem);
             schDemand = itemView.findViewById(R.id.scholarship_demand_rvItem);
+            plusOneButton = itemView.findViewById(R.id.scholarship_plusOne_button);
+
+            //fixme this onclick listener might not work
+            plusOneButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //create a new petition
+                    int position = getAdapterPosition();
+                    Scholarship selectedScholarship = scholarships.get(position);
+                    Petition petition = new Petition(selectedScholarship.getScholarshipId(), currentUser.getUid());
+                    //add pettions to firestore
+                    firestoreDb.collection(PETITIONS)
+                            .add(petition)
+                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Log.d(TAG, "onSuccess: petition added");
+                                    //todo add fancy success animation
+                                }
+                            });
+                }
+            });
 
 
-            itemView.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_ScholarshipListFragment_to_ScholarshipDetailFragment));
+//            itemView.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_ScholarshipListFragment_to_ScholarshipDetailFragment));
+            itemView.setOnClickListener(this);
+
         }
 
         public void bind(Scholarship scholarship) {
@@ -130,9 +160,9 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.
                         return;
                     }
 
-                    Log.d(TAG, "Current users born before 1900: " + value);
+                    Log.d(TAG, "Number of Petitions: " + value);
                     //TODO doublecheck
-                    schDemand.setText(value.size());
+                    schDemand.setText(String.valueOf(value.size()));
                 }
             });
             schTitle.setText(scholarship.getScholarshipTitle());
@@ -148,6 +178,14 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.
             Log.d(TAG, "onClick: " + String.valueOf(position));
             Scholarship selectedScholarship = scholarships.get(position);
 
+            //save scholarship into safeArgs and pass to scholarshipDetailFragment
+//            NavAction action = ScholarshipListFragmentDirections.actionScholarshipListFragmentToScholarshipDetailFragment(selectedScholarship);
+            findNavController(v).navigate(ScholarshipListFragmentDirections.actionScholarshipListFragmentToScholarshipDetailFragment(selectedScholarship));
+
+//            //bundle exp
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable(SELECTED_SCHOLARSHIP, selectedScholarship);
+//            navController.navigate(R.id.action_ScholarshipListFragment_to_ScholarshipDetailFragment, bundle);
         }
     }
 }

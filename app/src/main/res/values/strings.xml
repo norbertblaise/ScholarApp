@@ -26,13 +26,19 @@
     <string name="skip_btn">Skip</string>
     <string name="next_btn">Next</string>
     <string name="done_btn">Done</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
     <string name="title_activity_student_profile">StudentProfileActivity</string>
     <string name="student_profile_fragment_label">Student Profile Fragment</string>
     <string name="edit_label_fragment_label">Edit Profile Fragment</string>
     <string name="scholarship_detail_fragment_label">Scholarship Detail Fragment</string>
     <string name="scholarship_list_fragment_label">Scholarship List Fragment</string>
+    <string name="petitioned">petitioned</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_profile_message">You seem to be missing a profile. A student profile is essential to enabling us to accurately match you with the right scholarships and alert you when they become available. Please add one to continue</string>
 
 
 </resources>

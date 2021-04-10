@@ -3,4 +3,5 @@
     <string name="edit_label_fragment_label">Edit Profile Fragment</string>
     <string name="scholarship_detail_fragment_label">Scholarship Detail Fragment</string>
     <string name="scholarship_list_fragment_label">Scholarship List Fragment</string>
+    <string name="petitioned">petitioned</string>
 </resources>
