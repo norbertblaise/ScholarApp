@@ -2,9 +2,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.scholar.app.scholarship.MainActivity">
+
     <item
         android:id="@+id/action_view_profile"
-        android:orderInCategory="100"
+        android:orderInCategory="0"
         android:title="View profile" />
     <item
         android:id="@+id/dark_mode_switch"
@@ -13,13 +14,9 @@
         app:actionLayout="@layout/switch_item" />
     <item
         android:id="@+id/logout_action"
+        android:orderInCategory="103"
         android:title="Logout"
-        app:showAsAction="never"
-        />
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="102"
-        android:title="@string/action_settings"
         app:showAsAction="never" />
+
 
 </menu>

@@ -240,7 +240,7 @@ public class ScholarshipListFragment extends Fragment {
                             }
                         });
                 FirebaseUtil.detachListener();
-            case R.id.action_settings:
+
         }
         return super.onOptionsItemSelected(item);
     }
