@@ -25,6 +25,7 @@ import com.scholar.app.databinding.FragmentViewProfileBinding;
 import com.scholar.app.util.FirebaseUtil;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import static com.scholar.app.util.Constants.STUDENTS;
 import static com.scholar.app.util.FirebaseUtil.currentUser;
@@ -70,28 +71,33 @@ public class ViewProfileFragment extends Fragment {
                 if (documentSnapshot != null) {
                     //get all fields
 
-                    String name = documentSnapshot.get("name").toString();
-                    String city = documentSnapshot.get("city").toString();
-                    String bio = documentSnapshot.get("bio").toString();
-                    String gender = documentSnapshot.get("gender").toString();
-                    String dob = documentSnapshot.get("dob").toString();
-                    String country = documentSnapshot.get("country").toString();
-                    String university = documentSnapshot.get("university").toString();
-                    String uniCountry = documentSnapshot.get("uniCountry").toString();
-                    String courseOfStudy = documentSnapshot.get("courseOfStudy").toString();
-                    String degree = documentSnapshot.get("degree").toString();
-                    String startDate = documentSnapshot.get("startDate").toString();
-                    String expectedGradDate = documentSnapshot.get("expectedGradDate").toString();
-                    String studentLocation = city + ", " + country;
+                    try{
+                        String name = Objects.requireNonNull(documentSnapshot.get("name")).toString();
+                        String city = documentSnapshot.get("city").toString();
+                        String bio = documentSnapshot.get("bio").toString();
+                        String gender = documentSnapshot.get("gender").toString();
+                        String dob = documentSnapshot.get("dob").toString();
+                        String country = documentSnapshot.get("country").toString();
+                        String university = documentSnapshot.get("university").toString();
+                        String uniCountry = documentSnapshot.get("uniCountry").toString();
+                        String courseOfStudy = documentSnapshot.get("courseOfStudy").toString();
+                        String degree = documentSnapshot.get("degree").toString();
+                        String startDate = documentSnapshot.get("startDate").toString();
+                        String expectedGradDate = documentSnapshot.get("expectedGradDate").toString();
+                        String studentLocation = city + ", " + country;
 
-                    //create a student object
-                    student = new Student(currentUser.getUid(), name, dob, gender, bio, country, city, university, uniCountry,
-                            courseOfStudy, degree, startDate, expectedGradDate);
+                        //create a student object
+                        student = new Student(currentUser.getUid(), name, dob, gender, bio, country, city, university, uniCountry,
+                                courseOfStudy, degree, startDate, expectedGradDate);
 
-                    //Populate Profile fragment textviews
-                    studentName.setText(name);
-                    studentHome.setText(studentLocation);
-                    studentBio.setText(bio);
+                        //Populate Profile fragment textviews
+                        studentName.setText(name);
+                        studentHome.setText(studentLocation);
+                        studentBio.setText(bio);
+                    }
+                    catch( Exception e){
+                        Log.d(TAG, "onSuccess: " + e);
+                    }
                 }
             }
         });

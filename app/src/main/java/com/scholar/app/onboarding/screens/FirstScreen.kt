@@ -19,9 +19,16 @@ class FirstScreen : Fragment() {
 
     private val binding get() = _binding!!
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        var actionBar = activity?.actionBar
+        actionBar?.hide()
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
 
         // Inflate the layout for this fragment
         _binding = FragmentFirstScreenBinding.inflate(inflater, container, false)
@@ -29,11 +36,11 @@ class FirstScreen : Fragment() {
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
 
-        binding.buttonNext.setOnClickListener{
+        binding.buttonNext?.setOnClickListener{
             viewPager?.currentItem = 1
         }
 
-        binding.buttonSkip.setOnClickListener {
+        binding.buttonSkip?.setOnClickListener {
             Navigation.findNavController(view!!)
                     .navigate(R.id.action_viewPagerFragment_to_ScholarshipListFragment)
             onBoardingFinished()

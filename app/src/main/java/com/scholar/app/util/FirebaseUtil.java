@@ -58,7 +58,7 @@ public class FirebaseUtil {
                     if (firebaseAuth.getCurrentUser() == null) {
                         FirebaseUtil.signIn();
                     }
-                    Toast.makeText(callerActivity.getBaseContext(), "Welcome back!", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(callerActivity.getBaseContext(), "Welcome back!", Toast.LENGTH_LONG).show();
 
 
                 }
@@ -77,8 +77,7 @@ public class FirebaseUtil {
     public static void signIn() {
         //Choose authentication providers
         List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build()
+                new AuthUI.IdpConfig.EmailBuilder().build()
         );
 
 

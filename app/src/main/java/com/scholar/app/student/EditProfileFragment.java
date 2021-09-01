@@ -4,6 +4,7 @@ package com.scholar.app.student;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,8 +19,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
 
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.scholar.app.R;
@@ -63,6 +66,8 @@ public class EditProfileFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
+
     }
 
     @Override
@@ -300,22 +305,26 @@ public class EditProfileFragment extends Fragment {
 
             //set the text with current student profile values
             //check if displayName exists
-            if (currentUser.getDisplayName() != null){
+            if (currentUser.getDisplayName() != null && student != null){
                 fullName.setText(currentUser.getDisplayName());
             }else{
-                fullName.setText(student.getName());
+             //   fullName.setText(student.getName());
             }
-            country.setText(student.getCountry());
-            city.setText(student.getCity());
-            actvGender.setText(student.getGender());
-            course.setText(student.getCourseOfStudy());
-            actvDegree.setText(student.getDegree());
-            uniLocation.setText(student.getUniCountry());
-            dob.setText(student.getDob());
-            universityName.setText(student.getUniversity());
-            editTextStartDate.setText(student.getStartDate());
-            editTextExpectedGrad.setText(student.getExpectedGradDate());
-            bioEditText.setText(student.getBio());
+            try{
+                country.setText(student.getCountry());
+                city.setText(student.getCity());
+                actvGender.setText(student.getGender());
+                course.setText(student.getCourseOfStudy());
+                actvDegree.setText(student.getDegree());
+                uniLocation.setText(student.getUniCountry());
+                dob.setText(student.getDob());
+                universityName.setText(student.getUniversity());
+                editTextStartDate.setText(student.getStartDate());
+                editTextExpectedGrad.setText(student.getExpectedGradDate());
+                bioEditText.setText(student.getBio());
+            } catch(Exception e){
+                Log.d(TAG, "onViewCreated: " + e);
+            }
         }
 
         ArrayAdapter<String> cityAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, CITIES);

@@ -146,7 +146,6 @@ public class ScholarshipListFragment extends Fragment {
                 .build();
 
         scholarshipFirebaseUiAdapter = new ScholarshipFirebaseUiAdapter(options);
-        rvScholarships.setHasFixedSize(true);
         rvScholarships.setLayoutManager(new LinearLayoutManager(getContext()));
         rvScholarships.setAdapter(scholarshipFirebaseUiAdapter);
     }
@@ -271,7 +270,9 @@ public class ScholarshipListFragment extends Fragment {
 
         FirebaseUtil.attachListener();
         //setup recyclerview with firestoreUI adapter
-        setUpRecyclerView();
+        if(FirebaseUtil.mFirebaseAuth.getCurrentUser() != null){
+            setUpRecyclerView();
+        }
         if (scholarshipFirebaseUiAdapter != null) {
             scholarshipFirebaseUiAdapter.startListening();
         }

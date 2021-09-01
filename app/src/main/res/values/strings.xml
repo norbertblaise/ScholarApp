@@ -39,6 +39,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_profile_message">You seem to be missing a profile. A student profile is essential to enabling us to accurately match you with the right scholarships and alert you when they become available. Please add one to continue</string>
+    <string name="add_your_profile">Add your Profile</string>
 
 
 </resources>

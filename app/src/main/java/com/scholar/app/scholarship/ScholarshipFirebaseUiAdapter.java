@@ -85,6 +85,7 @@ public class ScholarshipFirebaseUiAdapter
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Log.d(TAG, "onClick: scholarship card clicked");
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION && listener != null) {
                         listener.onItemClick(getSnapshots().getSnapshot(position), position);
@@ -94,6 +95,7 @@ public class ScholarshipFirebaseUiAdapter
             plusOneButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Log.d(TAG, "onClick: plus one clicked");
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION && listener != null) {
                         listener.onPlusOneClick(getSnapshots().getSnapshot(position), position);
